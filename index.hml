@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MultiVerse Gamer | Roblox, Minecraft, Memes y Comunidad</title>
-    <!-- Tailwind CSS para el diseño gamer -->
+    <!-- Versión estable y ultra-compatible de Tailwind CSS para asegurar los colores y estilos gamer -->
     <script src="https://jsdelivr.net"></script>
     <!-- Iconos para los menús -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        body { background-color: #0b0f19; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0b0f19 !important; color: #e2e8f0 !important; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     </style>
 </head>
 <body>
@@ -21,10 +21,10 @@
                 🚀 MV-GAMER
             </h1>
             <div class="hidden md:flex space-x-6 font-bold text-sm">
-                <a href="#juegos" class="hover:text-purple-400 transition"><i class="fa-solid fa-gamepad mr-1"></i> Recompensas</a>
-                <a href="#ranking" class="hover:text-pink-400 transition"><i class="fa-solid fa-trophy mr-1"></i> Ranking Semanal</a>
-                <a href="#humor" class="hover:text-yellow-400 transition"><i class="fa-solid fa-face-laugh-beam mr-1"></i> Humor y Piropos</a>
-                <a href="#literatura" class="hover:text-green-400 transition"><i class="fa-solid fa-book mr-1"></i> Historias y Poesía</a>
+                <a href="#juegos" class="text-gray-300 hover:text-purple-400 transition"><i class="fa-solid fa-gamepad mr-1"></i> Recompensas</a>
+                <a href="#ranking" class="text-gray-300 hover:text-pink-400 transition"><i class="fa-solid fa-trophy mr-1"></i> Ranking Semanal</a>
+                <a href="#humor" class="text-gray-300 hover:text-yellow-400 transition"><i class="fa-solid fa-face-laugh-beam mr-1"></i> Humor y Piropos</a>
+                <a href="#literatura" class="text-gray-300 hover:text-green-400 transition"><i class="fa-solid fa-book mr-1"></i> Historias y Poesía</a>
             </div>
         </div>
     </nav>
@@ -39,7 +39,7 @@
 
         <!-- 🎮 SECCIÓN GAMER: ROBLOX & MINECRAFT -->
         <section id="juegos" class="space-y-6">
-            <h3 class="text-2xl font-bold border-l-4 border-purple-500 pl-3"><i class="fa-solid fa-gift text-purple-400 mr-2"></i>Recompensas y Códigos Gratis</h3>
+            <h3 class="text-2xl font-bold border-l-4 border-purple-500 pl-3 text-white"><i class="fa-solid fa-gift text-purple-400 mr-2"></i>Recompensas y Códigos Gratis</h3>
             <div class="grid md:grid-cols-2 gap-6">
                 <!-- Tarjeta Roblox -->
                 <div class="bg-[#1e1b4b] p-6 rounded-2xl border border-purple-500/30 shadow-xl">
@@ -52,7 +52,7 @@
                         <span class="font-mono text-green-400 text-xs font-bold">ROBLOX2026FREE</span>
                         <span class="text-xs bg-purple-600 px-2 py-1 rounded text-white font-bold">Activo</span>
                     </div>
-                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-xl transition text-sm">Ver Guía de Robux</button>
+                    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-xl transition text-sm shadow">Ver Guía de Robux</button>
                 </div>
                 <!-- Tarjeta Minecraft -->
                 <div class="bg-[#064e3b] p-6 rounded-2xl border border-green-500/30 shadow-xl">
@@ -65,14 +65,14 @@
                         <span class="font-mono text-green-400 text-xs font-bold">MC-BEDROCK-500</span>
                         <span class="text-xs bg-green-600 px-2 py-1 rounded text-white font-bold">Activo</span>
                     </div>
-                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-xl transition text-sm">Ver Texturas y Skins</button>
+                    <button class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded-xl transition text-sm shadow">Ver Texturas y Skins</button>
                 </div>
             </div>
         </section>
 
         <!-- 🏆 SECCIÓN RANKING Y RELATOS -->
         <section id="ranking" class="space-y-6">
-            <h3 class="text-2xl font-bold border-l-4 border-pink-500 pl-3"><i class="fa-solid fa-trophy text-pink-400 mr-2"></i>Ranking de Relatos de la Semana</h3>
+            <h3 class="text-2xl font-bold border-l-4 border-pink-500 pl-3 text-white"><i class="fa-solid fa-trophy text-pink-400 mr-2"></i>Ranking de Relatos de la Semana</h3>
             <p class="text-gray-400 text-sm">Vota por tu historia favorita de la comunidad. ¡El ganador se actualiza cada domingo!</p>
             
             <div class="space-y-3">
@@ -97,7 +97,7 @@
 
         <!-- 😂 HUMOR, MEMES Y PIROPOS -->
         <section id="humor" class="space-y-6">
-            <h3 class="text-2xl font-bold border-l-4 border-yellow-500 pl-3"><i class="fa-solid fa-face-laugh-beam text-yellow-400 mr-2"></i>Zona de Humor Alternativo</h3>
+            <h3 class="text-2xl font-bold border-l-4 border-yellow-500 pl-3 text-white"><i class="fa-solid fa-face-laugh-beam text-yellow-400 mr-2"></i>Zona de Humor Alternativo</h3>
             
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Bloque de Memes -->
@@ -136,8 +136,6 @@
 
         <!-- 📝 POESÍAS -->
         <section id="literatura" class="space-y-6">
-            <h3 class="text-2xl font-bold border-l-4 border-green-500 pl-3"><i class="fa-solid fa-feather-pointed text-green-400 mr-2"></i>Rincón de Poesía Gamer</h3>
+            <h3 class="text-2xl font-bold border-l-4 border-green-500 pl-3 text-white"><i class="fa-solid fa-feather-pointed text-green-400 mr-2"></i>Rincón de Poesía Gamer</h3>
             <div class="bg-[#111827] p-6 rounded-2xl border border-gray-800 max-w-xl mx-auto text-center shadow-inner">
                 <p class="text-lg italic text-gray-300 leading-relaxed">
-                    "Entre bloques de piedra y mundos pixelados,<br>
-                    busqué mil cofres que estaban guardados.<br>
