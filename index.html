@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MV GAMER | Universo Gamer para Roblox, Minecraft, Fortnite y Fútbol</title>
-<meta name="description" content="MV GAMER: guías seguras, memes, minijuegos, ranking, insignias y coach gamer con IA para jugadores de 8 a 18 años.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<title>MV GAMER | Universo Gamer para Todos</title>
+<meta name="description" content="MV GAMER: guías estratégicas, memes, minijuegos interactivos, ranking, insignias y coach gamer con IA para jugadores de todas las edades.">
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Orbitron:wght=600;800;900&family=Rajdhani:wght=500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -39,7 +39,6 @@ img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 
-/* Luces de fondo */
 .bg-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
 .bg-fx::before{
   content:"";position:absolute;inset:-40%;
@@ -51,17 +50,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
-/* Encabezado */
 header{
   position:sticky;top:0;z-index:90;
   background:rgba(6,7,19,.88);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
 }
-.nav-wrap{
-  display:flex;align-items:center;justify-content:space-between;
-  height:72px;
-}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .brand{
   font-family:"Orbitron",sans-serif;font-size:24px;font-weight:900;
   display:flex;align-items:center;gap:10px;
@@ -82,7 +77,6 @@ header{
 }
 .nav-links a:hover{color:var(--text);background:rgba(157,92,255,.12)}
 
-/* Botones */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:12px 24px;border-radius:10px;font-weight:700;text-transform:uppercase;
@@ -98,16 +92,13 @@ header{
   color:#040c1a;box-shadow:0 0 20px rgba(34,230,255,.35);font-weight:800;
 }
 .btn-cyan:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(34,230,255,.6)}
-.btn-outline{
-  border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);
-}
+.btn-outline{border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);}
 .btn-outline:hover{border-color:var(--cyan);background:rgba(34,230,255,.1)}
 
-/* Hero */
 .hero{padding:60px 0 40px;text-align:center}
 .hero-tag{
   display:inline-block;padding:6px 14px;border-radius:30px;
-  background:rgba(157,92,255,.18);border:1px solid var(--violet);
+  background:rgba(34,230,255,.12);border:1px solid var(--cyan);
   color:var(--cyan);font-weight:700;font-size:13px;letter-spacing:2px;
   margin-bottom:18px;text-transform:uppercase;
 }
@@ -119,12 +110,9 @@ header{
   background:linear-gradient(135deg,var(--cyan) 20%,var(--pink) 80%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
-.hero p{
-  max-width:680px;margin:0 auto 30px;color:var(--muted);font-size:19px;
-}
+.hero p{max-width:680px;margin:0 auto 30px;color:var(--muted);font-size:19px;}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* Accesos rápidos */
 .quick-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:12px;margin:40px 0;
@@ -140,15 +128,12 @@ header{
 .quick-card .icon{font-size:28px;margin-bottom:6px}
 .quick-card .label{font-family:"Orbitron",sans-serif;font-size:13px;font-weight:700}
 
-/* Secciones */
 section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
 .sec-head{text-align:center;margin-bottom:36px}
-.sec-head h2{
-  font-family:"Orbitron",sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;
-}
+.sec-head h2{font-family:"Orbitron",sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;}
 .sec-head p{color:var(--muted);font-size:17px}
 
-/* Coach Gamer IA */
+/* Asistente IA Global */
 .ai-box{
   background:linear-gradient(145deg,rgba(20,24,55,.9),rgba(11,13,32,.95));
   border:2px solid var(--cyan);border-radius:16px;padding:28px;
@@ -176,777 +161,109 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
 .ai-response{
   margin-top:20px;padding:20px;border-radius:12px;background:rgba(157,92,255,.12);
   border-left:4px solid var(--cyan);display:none;animation:fadeIn .3s ease;
+  font-size:16px;line-height:1.6;
+}
+.ai-memory-badge{
+  display:block;margin-top:10px;font-size:12px;color:var(--lime);font-weight:700;
 }
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* Guías */
-.games-filter{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
-.filter-btn{
-  padding:8px 18px;border-radius:20px;background:rgba(255,255,255,.05);
-  border:1px solid var(--border);font-weight:700;font-size:14px;transition:.2s;
-}
-.filter-btn.active,.filter-btn:hover{background:var(--violet);border-color:var(--violet);color:#fff}
-
-.guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.guide-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:22px;transition:.25s;display:flex;flex-direction:column;
-}
-.guide-card:hover{border-color:var(--pink);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,62,200,.2)}
-.guide-tag{
-  align-self:flex-start;font-size:12px;font-weight:700;padding:3px 10px;
-  border-radius:6px;text-transform:uppercase;margin-bottom:12px;
-}
-.tag-roblox{background:rgba(255,65,84,.2);color:var(--red);border:1px solid var(--red)}
-.tag-minecraft{background:rgba(182,255,59,.2);color:var(--lime);border:1px solid var(--lime)}
-.tag-fortnite{background:rgba(34,230,255,.2);color:var(--cyan);border:1px solid var(--cyan)}
-.tag-futbol{background:rgba(255,209,59,.2);color:var(--gold);border:1px solid var(--gold)}
-.guide-card h3{font-family:"Orbitron",sans-serif;font-size:18px;margin-bottom:8px}
-.guide-card p{color:var(--muted);font-size:15px;flex:1;margin-bottom:14px}
-.guide-steps{background:rgba(0,0,0,.3);border-radius:8px;padding:12px;font-size:14px;color:#d5dbf5}
-.guide-steps ol{padding-left:18px}
-.guide-steps li{margin-bottom:4px}
-
-/* Memes */
-.memes-topbar{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:24px;flex-wrap:wrap;gap:12px;
-}
-.memes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
-.meme-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  overflow:hidden;transition:.25s;display:flex;flex-direction:column;
-}
-.meme-card:hover{border-color:var(--cyan);transform:translateY(-4px)}
-.meme-media{
-  height:200px;background:linear-gradient(135deg,#121638,#1a1340);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;padding:20px;text-align:center;
-}
-.meme-text{font-family:"Orbitron",sans-serif;font-size:16px;font-weight:800;color:#fff;text-shadow:0 2px 10px #000}
-.meme-badge{
-  position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;
-  padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;
-}
-.meme-body{padding:16px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border)}
-.meme-info h4{font-size:16px;font-weight:700}
-.meme-info span{font-size:13px;color:var(--muted)}
-.meme-actions{display:flex;gap:8px;align-items:center}
-.btn-vote{
-  display:inline-flex;align-items:center;gap:6px;padding:6px 12px;
-  border-radius:8px;background:rgba(157,92,255,.18);border:1px solid var(--violet);
-  color:var(--text);font-weight:700;font-size:14px;transition:.2s;
-}
-.btn-vote:hover{background:var(--violet);color:#fff}
-.btn-report{
-  padding:6px 10px;border-radius:8px;background:rgba(255,65,84,.12);
-  border:1px solid rgba(255,65,84,.3);color:var(--red);font-size:13px;font-weight:700;
-  transition:.2s;
-}
-.btn-report:hover{background:var(--red);color:#fff}
-
-/* Perfil e Insignias */
-.profile-box{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  padding:26px;display:grid;grid-template-columns:1fr 2fr;gap:24px;
-}
-@media(max-width:768px){.profile-box{grid-template-columns:1fr}}
-.avatar-col{text-align:center}
-.avatar{
-  width:90px;height:90px;border-radius:50%;margin:0 auto 12px;
-  background:linear-gradient(135deg,var(--pink),var(--cyan));
-  display:flex;align-items:center;justify-content:center;
-  font-family:"Orbitron",sans-serif;font-size:32px;font-weight:900;
-  box-shadow:0 0 25px rgba(255,62,200,.4);
-}
-.badges-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.badge-card{
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  border-radius:10px;padding:12px;text-align:center;transition:.2s;
-}
-.badge-card.unlocked{border-color:var(--gold);background:rgba(255,209,59,.1)}
-.badge-card .b-icon{font-size:26px;margin-bottom:4px}
-.badge-card .b-name{font-family:"Orbitron",sans-serif;font-size:12px;font-weight:700}
-.badge-card .b-desc{font-size:11px;color:var(--muted);margin-top:2px}
-
-/* Minijuegos */
-.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
-.game-panel{
-  background:var(--card);border:2px solid var(--border);border-radius:16px;
-  padding:24px;position:relative;overflow:hidden;
-}
-.game-panel h3{font-family:"Orbitron",sans-serif;font-size:22px;margin-bottom:8px}
-.quiz-box{margin-top:16px}
-.quiz-q{font-size:18px;font-weight:700;margin-bottom:14px;min-height:48px}
-.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:500px){.quiz-opts{grid-template-columns:1fr}}
-.quiz-btn{
-  background:rgba(255,255,255,.06);border:1px solid var(--border);
-  padding:12px;border-radius:8px;font-weight:700;font-size:15px;transition:.2s;
-}
-.quiz-btn:hover{border-color:var(--cyan);background:rgba(34,230,255,.1)}
-
-/* Reflejos */
-.reflex-canvas{
-  height:180px;background:rgba(0,0,0,.4);border:1px solid var(--border);
-  border-radius:10px;position:relative;overflow:hidden;margin:14px 0;
-}
-.target-gem{
-  position:absolute;width:48px;height:48px;border-radius:50%;
-  background:linear-gradient(135deg,var(--cyan),var(--pink));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;cursor:pointer;user-select:none;
+/* Grid de Juegos del Arcade */
+.games-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
 }
 
-/* Ranking */
-.rank-table{width:100%;border-collapse:collapse;margin-top:16px}
-.rank-table th{
-  text-align:left;padding:12px;color:var(--muted);
-  font-family:"Orbitron",sans-serif;font-size:12px;border-bottom:1px solid var(--border);
+.arcade-card {
+  background: #090a19;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.rank-table td{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.04);font-weight:600}
-.rank-badge{
-  display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;
-  border-radius:50%;font-weight:800;font-size:13px;
-}
-.top1{background:var(--gold);color:#000}
-.top2{background:#cfd2dc;color:#000}
-.top3{background:#cd7f32;color:#000}
+.card-cocos { border: 2px solid var(--pink); box-shadow: 0 0 25px rgba(255, 62, 200, 0.2); }
+.card-sopa { border: 2px solid var(--cyan); box-shadow: 0 0 25px rgba(34, 230, 255, 0.2); }
+.card-nave { border: 2px solid var(--lime); box-shadow: 0 0 25px rgba(182, 255, 59, 0.2); }
 
-/* Modal Denunciar */
-.modal-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);
-  z-index:999;display:none;align-items:center;justify-content:center;padding:20px;
+.game-ui {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
 }
-.modal-box{
-  background:var(--bg2);border:2px solid var(--red);border-radius:16px;
-  max-width:440px;width:100%;padding:24px;box-shadow:0 0 40px rgba(255,65,84,.25);
-}
-.modal-box h3{font-family:"Orbitron",sans-serif;font-size:20px;margin-bottom:10px;color:var(--red)}
-.report-reasons{display:flex;flex-direction:column;gap:8px;margin:16px 0}
-.report-opt{
-  display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;
-  background:rgba(255,255,255,.04);border:1px solid var(--border);cursor:pointer;
+canvas {
+  background: #000;
+  border: 3px solid #12163b;
+  border-radius: 8px;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-/* Barra inferior móvil */
-.bottom-bar{
-  position:fixed;bottom:0;left:0;right:0;height:64px;
-  background:rgba(6,7,19,.95);backdrop-filter:blur(14px);
-  border-top:1px solid var(--border);display:flex;justify-content:space-around;
-  align-items:center;z-index:80;
+/* Sopa de Letras */
+.ws-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  margin: 10px 0;
+  width: 100%;
 }
-@media(min-width:851px){.bottom-bar{display:none}}
-.bar-item{
-  display:flex;flex-direction:column;align-items:center;gap:2px;
-  font-size:11px;font-weight:700;color:var(--muted);
+.ws-cell {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  text-align: center;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "Orbitron", sans-serif;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
 }
-.bar-item:hover{color:var(--cyan)}
-.bar-item .icon{font-size:18px}
+.ws-cell.selected { background: var(--cyan); color: #060713; }
+.ws-cell.found { background: var(--lime); color: #060713; border-color: var(--lime); }
+.words-list { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+.word-item { padding: 3px 8px; background: rgba(255,255,255,.05); border: 1px solid var(--border); border-radius: 4px; font-size: 13px; font-weight: bold; }
+.word-item.found { text-decoration: line-through; opacity: 0.4; color: var(--lime); }
+
+.controls-desc { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
+.btn-game { margin-top: 12px; padding: 8px 16px; border-radius: 6px; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+.btn-pink { background: var(--pink); color: #fff; }
+.btn-cyan { background: var(--cyan); color: #060713; }
+.btn-lime { background: var(--lime); color: #060713; }
 </style>
 </head>
-
 <body>
+
 <div class="bg-fx"></div>
 
-<!-- Header -->
 <header>
   <div class="container nav-wrap">
-    <a href="#" class="brand">
-      MV GAMER <span class="brand-badge">8-18 AÑOS</span>
-    </a>
+    <div class="brand">MV GAMER <span class="brand-badge">OPEN IA</span></div>
     <nav class="nav-links">
-      <a href="#guias">Guías</a>
-      <a href="#coach">Coach IA</a>
-      <a href="#memes">Memes</a>
-      <a href="#juegos">Minijuegos</a>
-      <a href="#perfil">Mi Perfil</a>
-      <a href="#ranking">Ranking</a>
+      <a href="#coach">Asistente IA</a>
+      <a href="#arcade">Zona Arcade</a>
     </nav>
+    <div><a href="#coach" class="btn btn-outline" style="padding: 8px 16px; font-size: 13px;">Explorar</a></div>
   </div>
 </header>
 
-<main>
+<main class="container">
   <!-- Hero -->
   <section class="hero">
-    <div class="container">
-      <span class="hero-tag">🔥 Roblox • Minecraft • Fortnite • Fútbol</span>
-      <h1>EL UNIVERSO GAMER<br><span>MÁS DIVERTIDO Y SEGURO</span></h1>
-      <p>Aprende trucos legales, haz preguntas a nuestro Coach IA protegido para menores, sube tus memes, desbloquea insignias y compite en el ranking.</p>
-      <div class="hero-cta">
-        <a href="#coach" class="btn btn-cyan">🤖 Preguntar al Coach IA</a>
-        <a href="#guias" class="btn btn-primary">📖 Ver Guías Pro</a>
-        <a href="#juegos" class="btn btn-outline">🎮 Jugar Ahora</a>
-      </div>
-
-      <!-- Accesos directos -->
-      <div class="quick-grid">
-        <a href="#coach" class="quick-card">
-          <div class="icon">🤖</div>
-          <div class="label">Coach IA</div>
-        </a>
-        <a href="#guias" class="quick-card">
-          <div class="icon">💎</div>
-          <div class="label">Guías Pro</div>
-        </a>
-        <a href="#memes" class="quick-card">
-          <div class="icon">😂</div>
-          <div class="label">Memes</div>
-        </a>
-        <a href="#juegos" class="quick-card">
-          <div class="icon">⚡</div>
-          <div class="label">Minijuegos</div>
-        </a>
-        <a href="#perfil" class="quick-card">
-          <div class="icon">🏆</div>
-          <div class="label">Insignias</div>
-        </a>
-        <a href="#ranking" class="quick-card">
-          <div class="icon">👑</div>
-          <div class="label">Ranking</div>
-        </a>
-      </div>
+    <span class="hero-tag">Comunidad Abierta Para Todos los Públicos</span>
+    <h1>El Universo Digital de <span>MV GAMER</span></h1>
+    <p>Mejora tus habilidades e interactúa sin límites. Una enciclopedia interactiva apta para todas las edades con módulos inteligentes y juegos adictivos.</p>
+    <div class="hero-cta">
+      <a href="#coach" class="btn btn-primary">Hablar con la IA</a>
+      <a href="#arcade" class="btn btn-cyan">Ir al Arcade</a>
     </div>
-  </section>
-
-  <!-- Coach Gamer IA -->
-  <section id="coach">
-    <div class="container">
-      <div class="sec-head">
-        <h2>🤖 COACH GAMER CON IA</h2>
-        <p>Consejos seguros, trucos legales y ayuda para Roblox, Minecraft, Fortnite y Fútbol (Protegido para 8 a 18 años)</p>
-      </div>
-
-      <div class="ai-box">
-        <span class="ai-badge">🛡️ FILTRO DE SEGURIDAD INFANTIL ACTIVO</span>
-        <h3 style="font-family:'Orbitron';font-size:22px;margin-bottom:6px">¿Tienes alguna duda sobre tus juegos favoritos?</h3>
-        <p style="color:var(--muted);font-size:15px">Nunca te pediremos contraseñas ni datos personales. Solo trucos reales y seguros.</p>
-
-        <div class="ai-suggests">
-          <button class="ai-chip" onclick="askPreset('¿Cómo conseguir Robux de forma 100% segura y legal?')">💎 Robux Seguros</button>
-          <button class="ai-chip" onclick="askPreset('¿Cuál es la forma más rápida de encontrar diamantes en Minecraft?')">⛏️ Diamantes Minecraft</button>
-          <button class="ai-chip" onclick="askPreset('¿Cómo mejorar mi puntería y ganar en Fortnite sin gastar paVos?')">🎯 Puntería Fortnite</button>
-          <button class="ai-chip" onclick="askPreset('¿Qué consejos me das para regatear mejor en fútbol?')">⚽ Regates de Fútbol</button>
-        </div>
-
-        <div class="ai-input-wrap">
-          <input type="text" id="aiInput" class="ai-input" placeholder="Escribe tu pregunta sobre Roblox, Minecraft, Fortnite o fútbol...">
-          <button class="btn btn-cyan" onclick="submitQuestion()">Consultar IA</button>
-        </div>
-
-        <div id="aiResponse" class="ai-response">
-          <div style="font-weight:700;color:var(--cyan);margin-bottom:6px">
-            🤖 Consejero Gamer Responde:
-          </div>
-          <div id="aiText" style="font-size:16px;line-height:1.6"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Guías -->
-  <section id="guias">
-    <div class="container">
-      <div class="sec-head">
-        <h2>📖 GUÍAS PRO PARA CRACKS</h2>
-        <p>Aprende las mejores técnicas sin caer en trampas ni estafas</p>
-      </div>
-
-      <div class="games-filter">
-        <button class="filter-btn active" onclick="filterGuides('todos', this)">Todos</button>
-        <button class="filter-btn" onclick="filterGuides('roblox', this)">Roblox</button>
-        <button class="filter-btn" onclick="filterGuides('minecraft', this)">Minecraft</button>
-        <button class="filter-btn" onclick="filterGuides('fortnite', this)">Fortnite</button>
-        <button class="filter-btn" onclick="filterGuides('futbol', this)">Fútbol</button>
-      </div>
-
-      <div class="guides-grid">
-        <!-- Roblox -->
-        <div class="guide-card" data-game="roblox">
-          <span class="guide-tag tag-roblox">Roblox</span>
-          <h3>Cómo conseguir Robux 100% seguros</h3>
-          <p>Los generadores de Robux gratis son estafas que roban cuentas. Aprende las únicas formas legales y seguras.</p>
-          <div class="guide-steps">
-            <ol>
-              <li>Crea ropa o accesorios en Roblox Studio y véndelos.</li>
-              <li>Juega 'Pls Donate' donando pases de juego creados por ti.</li>
-              <li>Ahorra recompensas de Microsoft Rewards oficiales.</li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- Minecraft -->
-        <div class="guide-card" data-game="minecraft">
-          <span class="guide-tag tag-minecraft">Minecraft</span>
-          <h3>Ruta de Diamantes Rápida (Capa -58)</h3>
-          <p>En las nuevas versiones, los diamantes se concentran en las profundidades del Overworld.</p>
-          <div class="guide-steps">
-            <ol>
-              <li>Baja hasta la capa Y=-58 o Y=-59 con picos de hierro.</li>
-              <li>Mina en línea recta dejando dos bloques entre túneles.</li>
-              <li>Lleva siempre un cubo de agua para evitar la lava.</li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- Fortnite -->
-        <div class="guide-card" data-game="fortnite">
-          <span class="guide-tag tag-fortnite">Fortnite</span>
-          <h3>Conseguir paVos con el Pase de Batalla</h3>
-          <p>Maximiza tus puntos de experiencia jugando con amigos y completando misiones semanales.</p>
-          <div class="guide-steps">
-            <ol>
-              <li>Completa misiones diarias en modos Creativo con amigos.</li>
-              <li>Ahorra los paVos gratis que regala cada temporada.</li>
-              <li>Invierte solo en el Pase: ¡te devuelve más paVos de los que cuesta!</li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- Fútbol -->
-        <div class="guide-card" data-game="futbol">
-          <span class="guide-tag tag-futbol">Fútbol</span>
-          <h3>3 Regates Clave para Dejar Atrás al Rival</h3>
-          <p>Mejora tu control en campo real o en EA FC con movimientos sencillos pero letales.</p>
-          <div class="guide-steps">
-            <ol>
-              <li><strong>La Croqueta:</strong> pasa el balón de pie a pie en un solo toque rápido.</li>
-              <li><strong>Cambio de ritmo:</strong> frena en seco y acelera en diagonal.</li>
-              <li><strong>Amago de disparo:</strong> engaña al defensa antes de recortar.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Memes con denuncias -->
-  <section id="memes">
-    <div class="container">
-      <div class="sec-head">
-        <h2>😂 MEMES GAMER & MODERACIÓN</h2>
-        <p>Vota tus favoritos. Si ves contenido inapropiado, puedes denunciarlo para revisión inmediata.</p>
-      </div>
-
-      <div class="memes-topbar">
-        <div style="font-weight:700;color:var(--cyan)">🔥 Top Memes de la Semana</div>
-        <button class="btn btn-primary" onclick="addMemePrompt()">➕ Subir mi Meme (+XP)</button>
-      </div>
-
-      <div class="memes-grid">
-        <!-- Meme 1 -->
-        <div class="meme-card">
-          <div class="meme-media">
-            <span class="meme-badge">⛏️ MINECRAFT</span>
-            <div class="meme-text">"Cuando encuentras 8 diamantes y escuchas un 'SSSSSH' detrás de ti 💥"</div>
-          </div>
-          <div class="meme-body">
-            <div class="meme-info">
-              <h4>El Creeper Silencioso</h4>
-              <span>Por: StevePro23</span>
-            </div>
-            <div class="meme-actions">
-              <button class="btn-vote" onclick="voteMeme(1)">❤️ <span id="votes-1">42</span></button>
-              <button class="btn-report" onclick="openReportModal('El Creeper Silencioso')">🚨 Denunciar</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Meme 2 -->
-        <div class="meme-card">
-          <div class="meme-media" style="background:linear-gradient(135deg,#301222,#121c40)">
-            <span class="meme-badge">🎮 ROBLOX</span>
-            <div class="meme-text">"Mi amigo: 'Confía, este obby es fácil'.<br>El obby: Nivel 999 imposible 💀"</div>
-          </div>
-          <div class="meme-body">
-            <div class="meme-info">
-              <h4>El Obby Imposible</h4>
-              <span>Por: BloxMaster</span>
-            </div>
-            <div class="meme-actions">
-              <button class="btn-vote" onclick="voteMeme(2)">❤️ <span id="votes-2">38</span></button>
-              <button class="btn-report" onclick="openReportModal('El Obby Imposible')">🚨 Denunciar</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Meme 3 -->
-        <div class="meme-card">
-          <div class="meme-media" style="background:linear-gradient(135deg,#122e38,#1a1340)">
-            <span class="meme-badge">🎯 FORTNITE</span>
-            <div class="meme-text">"Yo: 'Solo le pegué 20 de daño'.<br>El enemigo con escopeta mítica: 200 directo 😭"</div>
-          </div>
-          <div class="meme-body">
-            <div class="meme-info">
-              <h4>El Escopetazo Legendario</h4>
-              <span>Por: VictoryRoyale</span>
-            </div>
-            <div class="meme-actions">
-              <button class="btn-vote" onclick="voteMeme(3)">❤️ <span id="votes-3">29</span></button>
-              <button class="btn-report" onclick="openReportModal('El Escopetazo Legendario')">🚨 Denunciar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Perfil e Insignias -->
-  <section id="perfil">
-    <div class="container">
-      <div class="sec-head">
-        <h2>🏆 PERFIL DE JUGADOR E INSIGNIAS</h2>
-        <p>Juega, publica y participa para desbloquear logros gamer</p>
-      </div>
-
-      <div class="profile-box">
-        <div class="avatar-col">
-          <div class="avatar">MV</div>
-          <h3 style="font-family:'Orbitron';font-size:20px">Gamer_Ruth</h3>
-          <p style="color:var(--lime);font-weight:700;font-size:14px">Nivel 2 • Pro</p>
-          <div style="margin-top:10px;font-size:14px;color:var(--muted)">
-            XP Total: <strong style="color:var(--cyan)" id="pXp">140 XP</strong>
-          </div>
-        </div>
-
-        <div>
-          <h4 style="font-family:'Orbitron';font-size:16px;margin-bottom:12px">TUS INSIGNIAS DESBLOQUEADAS</h4>
-          <div class="badges-grid">
-            <div class="badge-card unlocked" id="badge-novato">
-              <div class="b-icon">🥉</div>
-              <div class="b-name">Creador Novato</div>
-              <div class="b-desc">Publicar tu primer meme</div>
-            </div>
-            <div class="badge-card unlocked" id="badge-humor">
-              <div class="b-icon">👑</div>
-              <div class="b-name">Rey del Humor</div>
-              <div class="b-desc">Conseguir +20 votos</div>
-            </div>
-            <div class="badge-card" id="badge-cerebro">
-              <div class="b-icon">🧠</div>
-              <div class="b-name">Cerebro Gamer</div>
-              <div class="b-desc">Acertar el Quiz Gamer</div>
-            </div>
-            <div class="badge-card" id="badge-reflejos">
-              <div class="b-icon">⚡</div>
-              <div class="b-name">Reflejos Ninja</div>
-              <div class="b-desc">Lograr 50 pts en Gemas</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Minijuegos -->
-  <section id="juegos">
-    <div class="container">
-      <div class="sec-head">
-        <h2>🎮 MINIJUEGOS INTERACTIVOS</h2>
-        <p>Pon a prueba tus reflejos y conocimientos para ganar XP</p>
-      </div>
-
-      <div class="games-grid">
-        <!-- Minijuego 1: Quiz -->
-        <div class="game-panel">
-          <span class="guide-tag tag-minecraft">TRIVIA GAMER</span>
-          <h3>🧠 Quiz: ¿Cuánto sabes de videojuegos?</h3>
-          <p style="color:var(--muted);font-size:15px">Responde bien para desbloquear la insignia 'Cerebro Gamer'.</p>
-          
-          <div class="quiz-box">
-            <div class="quiz-q" id="quizQuestion">¿A qué altura (capa Y) es más común encontrar diamantes en Minecraft?</div>
-            <div class="quiz-opts">
-              <button class="quiz-btn" onclick="checkQuiz(0)">Capa Y = 64</button>
-              <button class="quiz-btn" onclick="checkQuiz(1)">Capa Y = -58</button>
-              <button class="quiz-btn" onclick="checkQuiz(2)">Capa Y = 0</button>
-              <button class="quiz-btn" onclick="checkQuiz(3)">Capa Y = 120</button>
-            </div>
-            <div id="quizFeedback" style="margin-top:12px;font-weight:700;display:none"></div>
-          </div>
-        </div>
-
-        <!-- Minijuego 2: Reflejos -->
-        <div class="game-panel">
-          <span class="guide-tag tag-fortnite">HABILIDAD</span>
-          <h3>⚡ Caza-Diamantes: Desafío Ninja</h3>
-          <p style="color:var(--muted);font-size:15px">Toca el diamante tantas veces como puedas antes de que se mueva.</p>
-          
-          <div style="display:flex;justify-content:space-between;font-weight:700;margin-top:10px">
-            <span>Puntos: <strong id="reflexScore" style="color:var(--cyan)">0</strong></span>
-            <span>Tiempo: <strong id="reflexTime" style="color:var(--pink)">15s</strong></span>
-          </div>
-
-          <div class="reflex-canvas" id="reflexArea">
-            <div class="target-gem" id="targetGem" onclick="hitGem()" style="left:50px;top:50px">💎</div>
-          </div>
-
-          <button class="btn btn-cyan" style="width:100%" onclick="startReflexGame()" id="btnStartReflex">¡Empezar Juego!</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ranking -->
-  <section id="ranking">
-    <div class="container">
-      <div class="sec-head">
-        <h2>👑 TABLA DE CLASIFICACIÓN</h2>
-        <p>Los mejores jugadores de la comunidad MV GAMER</p>
-      </div>
-
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;overflow-x:auto">
-        <table class="rank-table">
-          <thead>
-            <tr>
-              <th>Puesto</th>
-              <th>Jugador</th>
-              <th>Juego Favorito</th>
-              <th>Insignias</th>
-              <th>XP Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="rank-badge top1">1</span></td>
-              <td>👑 AlexBlox_99</td>
-              <td>Roblox</td>
-              <td>4 / 4</td>
-              <td><strong style="color:var(--gold)">420 XP</strong></td>
-            </tr>
-            <tr>
-              <td><span class="rank-badge top2">2</span></td>
-              <td>⭐ MinerPro_ES</td>
-              <td>Minecraft</td>
-              <td>3 / 4</td>
-              <td><strong style="color:var(--cyan)">350 XP</strong></td>
-            </tr>
-            <tr>
-              <td><span class="rank-badge top3">3</span></td>
-              <td>🔥 Cr7_Gamer10</td>
-              <td>Fútbol / EA FC</td>
-              <td>3 / 4</td>
-              <td><strong style="color:var(--pink)">280 XP</strong></td>
-            </tr>
-            <tr>
-              <td><span class="rank-badge">4</span></td>
-              <td>Gamer_Ruth (Tú)</td>
-              <td>Todos</td>
-              <td>2 / 4</td>
-              <td><strong id="myRankXp" style="color:var(--lime)">140 XP</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- Modal de Denuncia de Memes -->
-<div class="modal-overlay" id="reportModal">
-  <div class="modal-box">
-    <h3>🚨 Denunciar Publicación</h3>
-    <p style="font-size:14px;color:var(--muted)">Reportar: <strong id="reportMemeTitle" style="color:#fff"></strong></p>
-    <p style="font-size:13px;color:var(--muted);margin-top:4px">Selecciona el motivo para que los moderadores lo revisen:</p>
-
-    <div class="report-reasons">
-      <label class="report-opt"><input type="radio" name="reason" value="spam" checked> 📢 Spam o publicidad engañosa</label>
-      <label class="report-opt"><input type="radio" name="reason" value="ofensivo"> 🤬 Lenguaje ofensivo o grosero</label>
-      <label class="report-opt"><input type="radio" name="reason" value="no_apto"> 🚫 Contenido no apto para 8-18 años</label>
-      <label class="report-opt"><input type="radio" name="reason" value="acoso"> 🛑 Acoso o burla personal</label>
-    </div>
-
-    <div style="display:flex;gap:10px;justify-content:flex-end">
-      <button class="btn btn-outline" style="padding:8px 16px" onclick="closeReportModal()">Cancelar</button>
-      <button class="btn btn-primary" style="padding:8px 16px;background:var(--red)" onclick="submitReport()">Enviar Denuncia</button>
-    </div>
-  </div>
-</div>
-
-<!-- Barra inferior móvil -->
-<div class="bottom-bar">
-  <a href="#guias" class="bar-item"><span class="icon">📖</span><span>Guías</span></a>
-  <a href="#coach" class="bar-item"><span class="icon">🤖</span><span>Coach IA</span></a>
-  <a href="#memes" class="bar-item"><span class="icon">😂</span><span>Memes</span></a>
-  <a href="#juegos" class="bar-item"><span class="icon">🎮</span><span>Juegos</span></a>
-  <a href="#perfil" class="bar-item"><span class="icon">🏆</span><span>Perfil</span></a>
-</div>
-
-<script>
-// Puntos XP y logros del jugador
-let playerState = {
-  xp: 140,
-  badges: { novato: true, humor: true, cerebro: false, reflejos: false }
-};
-
-function addXp(amount, reason){
-  playerState.xp += amount;
-  document.getElementById('pXp').innerText = playerState.xp + ' XP';
-  document.getElementById('myRankXp').innerText = playerState.xp + ' XP';
-  alert('✨ +' + amount + ' XP Ganados: ' + reason);
-}
-
-// 1. Coach Gamer con IA y Filtro Infantil
-const safeKnowledge = {
-  robux: "🛡️ ¡ALERTA DE SEGURIDAD! Nunca uses páginas de 'Robux gratis': son estafas que buscan robar tu cuenta o meter virus. La única forma legal es creando ropa/objetos en Roblox Studio, jugando 'Pls Donate' con pases oficiales o con tarjetas oficiales.",
-  diamantes: "⛏️ Para encontrar diamantes rápido en Minecraft, baja a la capa Y = -58. Mina en túneles rectos de 2 bloques de alto y lleva siempre un cubo de agua para enfriar la lava.",
-  punteria: "🎯 En Fortnite, baja ligeramente la sensibilidad de tu mira para acertar más disparos con escopeta. Busca siempre ganar la altura (high ground) antes de disparar.",
-  regate: "⚽ En fútbol, amaga con el cuerpo hacia un lado apoyando fuerte el pie y sal disparado hacia el contrario con el exterior de la bota. ¡El cambio de ritmo lo es todo!",
-  default: "🎮 Entrena 15 minutos en modo práctica antes de entrar a partidas ranked. Recuerda no compartir contraseñas y descansar 10 minutos por cada hora de juego."
-};
-
-function askPreset(q){
-  document.getElementById('aiInput').value = q;
-  submitQuestion();
-}
-
-function submitQuestion(){
-  const query = document.getElementById('aiInput').value.trim();
-  if(!query) return;
-
-  const respBox = document.getElementById('aiResponse');
-  const textEl = document.getElementById('aiText');
-  respBox.style.display = 'block';
-  textEl.innerText = "Pensando el mejor consejo para ti...";
-
-  setTimeout(() => {
-    const qLower = query.toLowerCase();
-    let reply = "";
-
-    if(qLower.includes("hack") || qLower.includes("trampa") || qLower.includes("gratis robux") || qLower.includes("pavos gratis")){
-      reply = "🛡️ FILTRO DE SEGURIDAD: En MV GAMER no promovemos hacks ni trampas. Pueden suspender tu cuenta permanentemente. ¡Los verdaderos cracks juegan limpio!";
-    } else if(qLower.includes("robux")){
-      reply = safeKnowledge.robux;
-    } else if(qLower.includes("diamante") || qLower.includes("minecraft")){
-      reply = safeKnowledge.diamantes;
-    } else if(qLower.includes("punteria") || qLower.includes("fortnite") || qLower.includes("pavos")){
-      reply = safeKnowledge.punteria;
-    } else if(qLower.includes("futbol") || qLower.includes("regate") || qLower.includes("tiro") || qLower.includes("ea fc")){
-      reply = safeKnowledge.regate;
-    } else {
-      reply = "Consejo para " + query + ": " + safeKnowledge.default;
-    }
-
-    textEl.innerHTML = reply;
-  }, 400);
-}
-
-// 2. Filtro de Guías
-function filterGuides(game, btn){
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  document.querySelectorAll('.guide-card').forEach(card => {
-    if(game === 'todos' || card.getAttribute('data-game') === game){
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-
-// 3. Votos de Memes
-function voteMeme(id){
-  const el = document.getElementById('votes-' + id);
-  let v = parseInt(el.innerText) + 1;
-  el.innerText = v;
-  addXp(5, 'Voto registrado');
-}
-
-// 4. Modal de Denuncias
-function openReportModal(title){
-  document.getElementById('reportMemeTitle').innerText = title;
-  document.getElementById('reportModal').style.display = 'flex';
-}
-
-function closeReportModal(){
-  document.getElementById('reportModal').style.display = 'none';
-}
-
-function submitReport(){
-  const reason = document.querySelector('input[name="reason"]:checked').value;
-  alert('✅ Denuncia enviada a moderación.\nMotivo: ' + reason + '\nNuestros moderadores revisarán la publicación de inmediato.');
-  closeReportModal();
-}
-
-function addMemePrompt(){
-  const title = prompt("Escribe el texto gracioso de tu meme:");
-  if(title){
-    alert("🎉 ¡Meme enviado a revisión! Ganaste +25 XP.");
-    addXp(25, 'Nuevo meme publicado');
-  }
-}
-
-// 5. Quiz Gamer
-function checkQuiz(choice){
-  const feedback = document.getElementById('quizFeedback');
-  feedback.style.display = 'block';
-
-  if(choice === 1){
-    feedback.innerHTML = "<span style='color:var(--lime)'>🎉 ¡CORRECTO! En la capa Y = -58 hay mayor cantidad de diamantes (+50 XP).</span>";
-    if(!playerState.badges.cerebro){
-      playerState.badges.cerebro = true;
-      document.getElementById('badge-cerebro').classList.add('unlocked');
-      addXp(50, 'Insignia "Cerebro Gamer" desbloqueada');
-    }
-  } else {
-    feedback.innerHTML = "<span style='color:var(--red)'>❌ ¡Casi! La capa correcta es Y = -58. ¡Inténtalo de nuevo!</span>";
-  }
-}
-
-// 6. Juego de Reflejos
-let reflexTimer = null;
-let reflexTimeLeft = 15;
-let reflexCount = 0;
-let isPlayingReflex = false;
-
-function startReflexGame(){
-  if(isPlayingReflex) return;
-  isPlayingReflex = true;
-  reflexCount = 0;
-  reflexTimeLeft = 15;
-  document.getElementById('reflexScore').innerText = reflexCount;
-  document.getElementById('reflexTime').innerText = reflexTimeLeft + 's';
-  document.getElementById('btnStartReflex').innerText = "¡Atrapa los diamantes!...";
-
-  moveGem();
-
-  reflexTimer = setInterval(() => {
-    reflexTimeLeft--;
-    document.getElementById('reflexTime').innerText = reflexTimeLeft + 's';
-    if(reflexTimeLeft <= 0){
-      clearInterval(reflexTimer);
-      isPlayingReflex = false;
-      document.getElementById('btnStartReflex').innerText = "Jugar de Nuevo";
-      alert("⏱️ ¡Tiempo terminado! Atrapaste " + reflexCount + " puntos de gemas.");
-
-      if(reflexCount >= 30 && !playerState.badges.reflejos){
-        playerState.badges.reflejos = true;
-        document.getElementById('badge-reflejos').classList.add('unlocked');
-        addXp(60, 'Insignia "Reflejos Ninja" desbloqueada');
-      }
-    }
-  }, 1000);
-}
-
-function moveGem(){
-  const area = document.getElementById('reflexArea');
-  const gem = document.getElementById('targetGem');
-  const maxX = area.clientWidth - 60;
-  const maxY = area.clientHeight - 60;
-
-  const randX = Math.floor(Math.random() * Math.max(maxX, 10));
-  const randY = Math.floor(Math.random() * Math.max(maxY, 10));
-
-  gem.style.left = randX + 'px';
-  gem.style.top = randY + 'px';
-}
-
-function hitGem(){
-  if(!isPlayingReflex) return;
-  reflexCount += 5;
-  document.getElementById('reflexScore').innerText = reflexCount;
-  moveGem();
-}
-</script>
-</body>
-</html>
