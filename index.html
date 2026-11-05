@@ -235,57 +235,59 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
   margin-bottom: 18px;
 }
 
-/* NUEVOS ESTILOS: Minijuegos */
-.arcade-container {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  margin-bottom: 24px;
-}
-.game-screen {
+/* INTERFAZ ADICIONAL DE MINIJUEGOS Y MEMES MANTENIENDO CLASES ORIGINALES */
+.game-viewport {
   background: #020308;
   border: 2px dashed var(--pink);
   border-radius: 12px;
-  min-height: 200px;
+  height: 220px;
   margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  position: relative;
+  overflow: hidden;
 }
-
-/* NUEVOS ESTILOS: Memes con subida y puntuaciones */
-.meme-upload-box {
-  background: rgba(255, 255, 255, 0.03);
+.meme-upload-trigger {
+  background: var(--card);
   border: 2px dashed var(--violet);
   padding: 30px;
-  border-radius: 12px;
+  border-radius: 14px;
   text-align: center;
   margin-bottom: 30px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
 }
-.meme-upload-box:hover {
-  border-color: var(--pink);
-  background: rgba(255, 62, 200, 0.05);
+.meme-upload-trigger:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 20px rgba(34,230,255,0.15);
 }
-.memes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.reaction-container {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(6,7,19,0.6);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: auto;
 }
-.meme-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px;
+.react-action-btn {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
 }
-.meme-img {
-  width: 100%;
-  height: 220px;
+.react-action-btn span {
+  font-size: 12px;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+
+  <div class="bg-fx"></div>
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">
