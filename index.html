@@ -235,52 +235,25 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
   margin-bottom: 18px;
 }
 
-/* INTERFAZ ADICIONAL DE MINIJUEGOS Y MEMES MANTENIENDO CLASES ORIGINALES */
-.game-viewport {
-  background: #020308;
-  border: 2px dashed var(--pink);
-  border-radius: 12px;
-  height: 220px;
-  margin: 20px 0;
+/* Ajustes específicos para botones de reacciones de memes */
+.meme-reactions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
-.meme-upload-trigger {
-  background: var(--card);
-  border: 2px dashed var(--violet);
-  padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-  margin-bottom: 30px;
-  cursor: pointer;
-  transition: 0.25s;
+.meme-react-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s;
 }
-.meme-upload-trigger:hover {
+.meme-react-btn:hover {
   border-color: var(--cyan);
-  box-shadow: 0 0 20px rgba(34,230,255,0.15);
-}
-.reaction-container {
-  display: flex;
-  justify-content: space-around;
-  background: rgba(6,7,19,0.6);
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: auto;
-}
-.react-action-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 18px;
-  cursor: pointer;
-}
-.react-action-btn span {
-  font-size: 12px;
-  color: var(--muted);
+  background: rgba(34, 230, 255, 0.1);
 }
 </style>
 </head>
@@ -291,3 +264,21 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
   <header>
     <div class="container nav-wrap">
       <div class="brand">
+        MV GAMER <span class="brand-badge">OPEN IA</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#coach">Coach IA</a>
+        <a href="#minijuegos">Minijuegos</a>
+        <a href="#guias">Guías</a>
+        <a href="#memes">Memes</a>
+        <a href="#alojamientos">Alojamientos</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" style="border:none;">
+      <span class="hero-tag">Comunidad Abierta</span>
