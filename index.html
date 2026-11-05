@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MV GAMER | Universo Gamer para Roblox, Minecraft, Fortnite y Fútbol</title>
-<meta name="description" content="MV GAMER: guías seguras, memes, minijuegos, ranking, insignias y coach gamer con IA para jugadores de 8 a 18 años.">
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<title>MV GAMER | Universo Gamer</title>
+<meta name="description" content="MV GAMER: tu universo gamer. Juegos, recompensas, ranking y una comunidad increíble.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#060713;
-  --bg2:#0d0f24;
-  --card:rgba(18,21,49,.82);
-  --border:rgba(157,92,255,.25);
+  --bg:#05060f;
+  --bg2:#0b0d1f;
+  --panel:rgba(20,22,48,.72);
+  --line:rgba(160,120,255,.22);
   --violet:#9d5cff;
   --pink:#ff3ec8;
   --cyan:#22e6ff;
   --lime:#b6ff3b;
-  --gold:#ffd13b;
-  --red:#ff4154;
-  --text:#f0f2ff;
-  --muted:#9aa1c9;
+  --text:#eef0ff;
+  --muted:#9aa0c3;
+  --cut:14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -33,264 +32,539 @@ body{
   color:var(--text);
   overflow-x:hidden;
   line-height:1.5;
-  padding-bottom:80px;
 }
 img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:inherit}
 
-/* Luces de fondo originales */
-.bg-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
+/* ===== fondo animado ===== */
+.bg-fx{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .bg-fx::before{
-  content:"";position:absolute;inset:-40%;
+  content:"";position:absolute;inset:-50%;
   background:
-    radial-gradient(circle at 15% 20%,rgba(157,92,255,.22),transparent 40%),
-    radial-gradient(circle at 85% 30%,rgba(34,230,255,.18),transparent 40%),
-    radial-gradient(circle at 50% 85%,rgba(255,62,200,.16),transparent 45%);
+    radial-gradient(circle at 20% 20%,rgba(157,92,255,.25),transparent 35%),
+    radial-gradient(circle at 80% 30%,rgba(34,230,255,.16),transparent 35%),
+    radial-gradient(circle at 50% 90%,rgba(255,62,200,.16),transparent 40%);
+  animation:float 18s ease-in-out infinite alternate;
 }
+.bg-fx::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(157,92,255,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(157,92,255,.07) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);
+}
+@keyframes float{to{transform:translate(6%,4%) rotate(8deg)}}
 
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-
-/* Encabezado */
-header{
-  position:sticky;top:0;z-index:90;
-  background:rgba(6,7,19,.88);
+/* ===== navegación ===== */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 6%;
+  background:rgba(5,6,15,.7);
   backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
-.nav-wrap{
-  display:flex;align-items:center;justify-content:space-between;
-  height:72px;
+.logo{
+  font-family:"Orbitron",sans-serif;font-weight:900;font-size:22px;letter-spacing:3px;
+  text-decoration:none;display:flex;align-items:center;gap:10px;
 }
-.brand{
-  font-family:"Orbitron",sans-serif;font-size:24px;font-weight:900;
-  display:flex;align-items:center;gap:10px;
-  background:linear-gradient(135deg,var(--cyan),var(--pink));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+.logo-mark{
+  width:34px;height:34px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  font-size:15px;
 }
-.brand-badge{
-  font-size:11px;padding:3px 8px;border-radius:20px;
-  background:rgba(182,255,59,.18);color:var(--lime);
-  border:1px solid var(--lime);font-family:"Rajdhani",sans-serif;
-  font-weight:700;letter-spacing:1px;-webkit-text-fill-color:initial;
+.logo b{background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{display:flex;gap:6px}
+.menu a{
+  text-decoration:none;font-weight:700;font-size:15px;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 14px;color:var(--muted);transition:.25s;position:relative;
 }
-.nav-links{display:flex;gap:18px;align-items:center}
-@media(max-width:850px){.nav-links{display:none}}
-.nav-links a{
-  font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:1px;
-  color:var(--muted);transition:.2s;padding:6px 10px;border-radius:8px;
+.menu a::after{
+  content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
+  background:var(--cyan);transform:scaleX(0);transition:.25s;box-shadow:0 0 10px var(--cyan);
 }
-.nav-links a:hover{color:var(--text);background:rgba(157,92,255,.12)}
+.menu a:hover{color:var(--text)}
+.menu a:hover::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:44px;height:44px;font-size:22px;cursor:pointer}
 
-/* Botones originales */
+/* ===== botones ===== */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:12px 24px;border-radius:10px;font-weight:700;text-transform:uppercase;
-  font-size:15px;letter-spacing:1px;transition:.25s;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:"Orbitron",sans-serif;font-weight:800;font-size:14px;letter-spacing:2px;
+  text-decoration:none;color:#fff;
+  padding:17px 32px;
+  background:linear-gradient(90deg,var(--violet),var(--pink));
+  clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
+  transition:.3s;position:relative;
+  filter:drop-shadow(0 0 18px rgba(157,92,255,.55));
 }
-.btn-primary{
-  background:linear-gradient(135deg,var(--pink),var(--violet));
-  color:#fff;box-shadow:0 0 20px rgba(255,62,200,.35);
+.btn:hover{transform:translateY(-3px);filter:drop-shadow(0 0 28px rgba(255,62,200,.75))}
+.btn.ghost{
+  background:transparent;color:var(--cyan);
+  box-shadow:inset 0 0 0 2px var(--cyan);
+  filter:none;clip-path:none;
 }
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,62,200,.6)}
-.btn-cyan{
-  background:linear-gradient(135deg,var(--cyan),#1890ff);
-  color:#040c1a;box-shadow:0 0 20px rgba(34,230,255,.35);font-weight:800;
-}
-.btn-cyan:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(34,230,255,.6)}
-.btn-outline{
-  border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);
-}
-.btn-outline:hover{border-color:var(--cyan);background:rgba(34,230,255,.1)}
+.btn.ghost:hover{background:rgba(34,230,255,.1);filter:drop-shadow(0 0 18px rgba(34,230,255,.5))}
 
-/* Hero */
-.hero{padding:60px 0 40px;text-align:center}
-.hero-tag{
-  display:inline-block;padding:6px 14px;border-radius:30px;
-  background:rgba(157,92,255,.18);border:1px solid var(--violet);
-  color:var(--cyan);font-weight:700;font-size:13px;letter-spacing:2px;
-  margin-bottom:18px;text-transform:uppercase;
+/* ===== hero ===== */
+.hero{
+  position:relative;min-height:92vh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:80px 20px 120px;overflow:hidden;
 }
+.hero-img{
+  position:absolute;inset:0;z-index:-1;
+  background:url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1800&q=80") center/cover;
+  opacity:.35;
+  mask-image:linear-gradient(#000 40%,transparent);
+}
+.hero-floor{
+  position:absolute;left:-50%;right:-50%;bottom:-10%;height:55%;z-index:-1;
+  background-image:
+    linear-gradient(rgba(34,230,255,.5) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(34,230,255,.5) 2px,transparent 2px);
+  background-size:70px 70px;
+  transform:perspective(400px) rotateX(65deg);
+  mask-image:linear-gradient(transparent,#000 60%);
+  animation:grid 3s linear infinite;
+  opacity:.45;
+}
+@keyframes grid{to{background-position:0 70px}}
+.tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;letter-spacing:4px;text-transform:uppercase;font-size:14px;
+  color:var(--lime);padding:8px 16px;border:1px solid rgba(182,255,59,.4);
+  background:rgba(182,255,59,.06);margin-bottom:26px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
 .hero h1{
-  font-family:"Orbitron",sans-serif;font-size:clamp(30px,6vw,54px);
-  font-weight:900;line-height:1.15;margin-bottom:18px;
+  font-family:"Orbitron",sans-serif;font-weight:900;
+  font-size:clamp(40px,9vw,110px);line-height:.95;letter-spacing:-1px;
 }
-.hero h1 span{
-  background:linear-gradient(135deg,var(--cyan) 20%,var(--pink) 80%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+.hero h1 .small{display:block;font-size:.38em;letter-spacing:12px;color:var(--muted);margin-bottom:12px;font-weight:600}
+.glitch{
+  position:relative;display:inline-block;
+  background:linear-gradient(90deg,var(--cyan),var(--violet) 50%,var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 30px rgba(157,92,255,.6));
 }
-.hero p{
-  max-width:680px;margin:0 auto 30px;color:var(--muted);font-size:19px;
-}
-.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero p{max-width:620px;margin:26px auto 36px;color:#c9cdea;font-size:21px;font-weight:500}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-/* Secciones y Maquetación */
-section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
-.sec-head{text-align:center;margin-bottom:36px}
-.sec-head h2{
-  font-family:"Orbitron",sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;
+/* ===== ticker ===== */
+.ticker{
+  border-block:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(157,92,255,.15),rgba(34,230,255,.1));
+  overflow:hidden;white-space:nowrap;padding:14px 0;
 }
-.sec-head p{color:var(--muted);font-size:17px}
+.ticker-track{display:inline-flex;gap:50px;animation:marquee 22s linear infinite;
+  font-family:"Orbitron",sans-serif;font-weight:800;letter-spacing:3px;font-size:15px}
+.ticker-track span{color:var(--muted)}
+.ticker-track span i{font-style:normal;color:var(--cyan);margin-right:50px}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-.content-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-.guide-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:22px;transition:.25s;display:flex;flex-direction:column;
-}
-.guide-card:hover{border-color:var(--pink);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,62,200,.2)}
+/* ===== secciones ===== */
+section{padding:100px 6%;max-width:1300px;margin:auto}
+.head{text-align:center;margin-bottom:54px}
+.eyebrow{color:var(--cyan);font-weight:700;letter-spacing:5px;font-size:14px;text-transform:uppercase}
+.section-title{font-family:"Orbitron",sans-serif;font-weight:900;font-size:clamp(28px,5vw,48px);margin:10px 0 12px}
+.section-subtitle{color:var(--muted);font-size:19px}
 
-.guide-tag{
-  align-self:flex-start;font-size:12px;font-weight:700;padding:3px 10px;
-  border-radius:6px;text-transform:uppercase;margin-bottom:12px;
+/* ===== stats ===== */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:70px;padding-bottom:0}
+.stat{
+  text-align:center;padding:26px 10px;background:var(--panel);border:1px solid var(--line);
 }
-.tag-roblox{background:rgba(255,65,84,.2);color:var(--red);border:1px solid var(--red)}
-.tag-fortnite{background:rgba(34,230,255,.2);color:var(--cyan);border:1px solid var(--cyan)}
-.tag-futbol{background:rgba(255,209,59,.2);color:var(--gold);border:1px solid var(--gold)}
+.stat strong{display:block;font-family:"Orbitron",sans-serif;font-size:clamp(26px,5vw,42px);font-weight:900;color:var(--lime);text-shadow:0 0 20px rgba(182,255,59,.4)}
+.stat span{color:var(--muted);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:14px}
 
-/* Bloques interactivos */
-.interactive-container {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 24px;
-  margin-bottom: 20px;
+/* ===== tarjetas ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.card{
+  position:relative;background:var(--panel);
+  border:1px solid var(--line);
+  clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,26px 100%,0 calc(100% - 26px));
+  transition:.35s;overflow:hidden;
+  display:flex;flex-direction:column;
 }
-.arcade-screen {
-  background: #020308;
-  border: 2px dashed var(--cyan);
-  border-radius: 12px;
-  height: 200px;
-  margin: 15px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+.card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(34,230,255,.0),rgba(157,92,255,.0));
+  transition:.35s;
 }
-.forum-input {
-  width: 100%;
-  background: rgba(6,7,19,.8);
-  border: 1px solid var(--border);
-  padding: 12px;
-  border-radius: 8px;
-  color: var(--text);
-  font-family: inherit;
-  margin-bottom: 10px;
+.card:hover{transform:translateY(-8px);border-color:var(--violet);box-shadow:0 20px 50px rgba(157,92,255,.25)}
+.card:hover::before{background:linear-gradient(135deg,rgba(34,230,255,.08),rgba(255,62,200,.08))}
+.card-img{position:relative;height:220px;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.card:hover .card-img img{transform:scale(1.08)}
+.card-img::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(11,13,31,.95))}
+.badge{
+  position:absolute;top:16px;left:16px;z-index:2;
+  font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 12px;background:rgba(5,6,15,.75);border:1px solid var(--cyan);color:var(--cyan);
 }
-.forum-input:focus {
-  outline: none;
-  border-color: var(--cyan);
+.card-content{padding:26px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:"Orbitron",sans-serif;font-weight:800;font-size:22px;letter-spacing:1px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:17px;flex:1}
+.small-btn{
+  align-self:flex-start;margin-top:22px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Orbitron",sans-serif;font-weight:800;font-size:12px;letter-spacing:2px;
+  text-decoration:none;padding:12px 20px;color:var(--bg);
+  background:var(--cyan);
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  transition:.25s;
 }
+.small-btn:hover{background:var(--lime);transform:translateX(4px)}
 
-/* EFECTOS Y CONTENEDOR TIPO STICKER */
-.stickers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  justify-items: center;
+/* tarjetas de códigos */
+.reward{padding:34px;flex-direction:row;gap:22px;align-items:flex-start}
+.reward .icon{
+  flex:none;width:64px;height:64px;display:grid;place-items:center;font-size:30px;
+  background:linear-gradient(135deg,rgba(157,92,255,.35),rgba(34,230,255,.2));
+  border:1px solid var(--line);
 }
-.sticker-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px dashed var(--border);
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  width: 100%;
-  max-width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 0.25s;
+.reward .card-content{padding:0}
+
+/* ===== ranking ===== */
+.ranking{max-width:820px;margin:auto;display:grid;gap:16px}
+.rank{
+  display:flex;align-items:center;gap:20px;
+  padding:22px 26px;background:var(--panel);border:1px solid var(--line);
+  border-left:4px solid var(--c);
+  transition:.3s;
 }
-.sticker-card:hover {
-  transform: scale(1.05) rotate(2deg);
+.rank:hover{transform:translateX(8px);box-shadow:-10px 0 30px -10px var(--c)}
+.rank .pos{font-family:"Orbitron",sans-serif;font-weight:900;font-size:34px;color:var(--c);width:56px;text-shadow:0 0 18px var(--c)}
+.rank .info{flex:1}
+.rank strong{display:block;font-size:21px}
+.rank small{color:var(--muted);font-size:15px}
+.rank .soon{
+  font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 12px;border:1px dashed var(--c);color:var(--c);white-space:nowrap;
 }
-.sticker-img {
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-  margin-bottom: 12px;
-  filter: drop-shadow(0 0 8px var(--cyan)) drop-shadow(0 0 2px #fff);
-  background: transparent;
-  padding: 5px;
+.gold{--c:#ffd23f}.silver{--c:#cfd6ff}.bronze{--c:#ff9b5c}
+
+/* ===== comunidad ===== */
+.community{
+  position:relative;text-align:center;padding:80px 24px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0,rgba(255,62,200,.35),transparent 60%),
+    linear-gradient(135deg,#1b0d3d,#0a1230);
+  border:1px solid rgba(157,92,255,.5);
+  clip-path:polygon(0 0,calc(100% - 40px) 0,100% 40px,100% 100%,40px 100%,0 calc(100% - 40px));
 }
-.reaction-btn-simple {
-  background: rgba(6,7,19,0.8);
-  border: 1px solid var(--border);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 700;
-  transition: 0.2s;
-  color: var(--text);
+.community h2{font-family:"Orbitron",sans-serif;font-weight:900;font-size:clamp(28px,5vw,52px);margin-bottom:16px}
+.community p{color:#d4d0f0;font-size:20px;margin-bottom:34px}
+
+/* ===== footer ===== */
+footer{
+  text-align:center;padding:50px 20px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:16px;background:rgba(5,6,15,.8);
 }
-.reaction-btn-simple:hover {
-  border-color: var(--pink);
-  background: rgba(255, 62, 200, 0.1);
+footer .logo{justify-content:center;margin-bottom:14px}
+
+/* ===== botones de acceso rápido ===== */
+.quick{padding-top:60px;padding-bottom:0}
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.quick-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  min-height:130px;padding:20px 10px;text-decoration:none;text-align:center;
+  background:var(--panel);border:1px solid var(--line);
+  clip-path:polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px);
+  transition:.25s;cursor:pointer;
+}
+.quick-btn .ico{font-size:38px;transition:.25s}
+.quick-btn b{font-family:"Orbitron",sans-serif;font-weight:800;font-size:15px;letter-spacing:2px}
+.quick-btn small{color:var(--muted);font-size:15px;font-weight:600}
+.quick-btn:hover,.quick-btn:focus-visible{
+  border-color:var(--cyan);background:rgba(34,230,255,.08);transform:translateY(-5px);
+  box-shadow:0 0 30px rgba(34,230,255,.2);outline:none;
+}
+.quick-btn:hover .ico{transform:scale(1.2)}
+
+/* ===== botón volver arriba ===== */
+.to-top{
+  position:fixed;right:20px;bottom:24px;z-index:90;
+  width:54px;height:54px;border:none;cursor:pointer;
+  font-size:22px;color:#fff;
+  background:linear-gradient(135deg,var(--violet),var(--pink));
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  opacity:0;pointer-events:none;transform:translateY(20px);transition:.3s;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+.to-top:hover{filter:brightness(1.2)}
+
+/* ===== barra inferior (móvil) ===== */
+.bottom-bar{display:none}
+
+/* ===== animación al hacer scroll ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* ===== móvil ===== */
+@media(max-width:760px){
+  body{font-size:17px}
+  .burger{display:block}
+  .menu{
+    position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:rgba(5,6,15,.97);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .menu.open{max-height:320px}
+  .menu a{padding:16px 6%;border-top:1px solid var(--line)}
+  .menu a::after{display:none}
+  .hero{min-height:auto;padding:70px 20px 100px}
+  .hero h1 .small{letter-spacing:6px}
+  .hero p{font-size:19px}
+  .btn{padding:15px 24px;font-size:13px}
+  section{padding:70px 5%}
+  .stats{gap:10px;padding-top:50px}
+  .stat{padding:18px 6px}
+  .stat span{font-size:12px;letter-spacing:1px}
+  .reward{padding:26px;flex-direction:column}
+  .rank{padding:18px;gap:14px}
+  .rank .pos{font-size:26px;width:40px}
+  .rank strong{font-size:18px}
+  .quick{padding-top:44px}
+  .quick-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .quick-btn{min-height:116px}
+  body{padding-bottom:72px}
+  .bottom-bar{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    position:fixed;left:0;right:0;bottom:0;z-index:95;
+    background:rgba(5,6,15,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .bottom-bar a{
+    display:flex;flex-direction:column;align-items:center;gap:2px;
+    padding:10px 4px;text-decoration:none;color:var(--muted);
+    font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;
+  }
+  .bottom-bar a span{font-size:22px}
+  .bottom-bar a.active{color:var(--cyan)}
+  .to-top{bottom:88px;right:14px;width:48px;height:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
+
 <body>
+<div class="bg-fx"></div>
 
-  <div class="bg-fx"></div>
+<nav>
+  <a href="#" class="logo"><span class="logo-mark">🚀</span>MV <b>GAMER</b></a>
+  <button class="burger" aria-label="Abrir menú" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+  <div class="menu">
+    <a href="#juegos">Juegos</a>
+    <a href="#codigos">Códigos</a>
+    <a href="#ranking">Ranking</a>
+    <a href="#comunidad">Comunidad</a>
+  </div>
+</nav>
 
-  <header>
-    <div class="container nav-wrap">
-      <div class="brand">
-        MV GAMER <span class="brand-badge">OPEN IA</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#minijuegos">Minijuegos</a>
-        <a href="#memes">Stickers</a>
-        <a href="#chistes">Chistes</a>
-        <a href="#guias">Comunidad FAQ</a>
-      </nav>
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-floor"></div>
+  <div>
+    <div class="tag"><span class="dot"></span> Jugador 1 conectado</div>
+    <h1><span class="small">WELCOME TO</span><span class="glitch">MV GAMER</span></h1>
+    <p>Tu universo gamer. Descubre juegos, consigue recompensas, comparte memes y forma parte de una comunidad increíble.</p>
+    <div class="hero-actions">
+      <a href="#juegos" class="btn">EXPLORAR AHORA 🎮</a>
+      <a href="#comunidad" class="btn ghost">ÚNETE</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <div class="container">
-    
-    <!-- Hero Principal -->
-    <section id="inicio" class="hero" style="border:none;">
-      <span class="hero-tag">Comunidad Interactiva</span>
-      <h1>Universo Gamer de <span>MV GAMER</span></h1>
-      <p>Explora juegos exclusivos, comparte stickers transparentes con votaciones abiertas y debate estrategias con la comunidad.</p>
-      <div class="hero-cta">
-        <a href="#minijuegos" class="btn btn-primary">Jugar Ahora</a>
-        <a href="#memes" class="btn btn-cyan">Zona Stickers</a>
-        <a href="#guias" class="btn btn-outline">Foro Consultas</a>
-      </div>
-    </section>
+<div class="ticker">
+  <div class="ticker-track">
+    <span>ROBLOX <i>✦</i> MINECRAFT <i>✦</i> RECOMPENSAS <i>✦</i> RANKING <i>✦</i> MEMES <i>✦</i> COMUNIDAD <i>✦</i></span>
+    <span>ROBLOX <i>✦</i> MINECRAFT <i>✦</i> RECOMPENSAS <i>✦</i> RANKING <i>✦</i> MEMES <i>✦</i> COMUNIDAD <i>✦</i></span>
+  </div>
+</div>
 
-    <!-- 1. APARTADO: MINIJUEGOS NATIVOS -->
-    <section id="minijuegos">
-      <div class="sec-head">
-        <h2>Minijuegos Exclusivos</h2>
-        <p>Títulos interactivos ligeros desarrollados en código nativo para la comunidad.</p>
-      </div>
-      
-      <div class="interactive-container" style="max-width: 600px; margin: 0 auto;">
-        <h3 style="font-family:'Orbitron'; text-align:center;">Gamer Clicker Quest</h3>
-        <p style="color:var(--muted); text-align:center; font-size:15px;">¡Haz clic para acumular gemas e incrementar tu poder informático!</p>
-        
-        <div class="arcade-screen">
-          <h1 id="click-counter" style="color:var(--gold); font-size:42px; font-family:'Orbitron'; margin-bottom:10px;">0 💎</h1>
-          <button class="btn btn-primary" onclick="clickGema()" style="border-radius:50%; width:80px; height:80px; font-size:28px; padding:0;">🎮</button>
-        </div>
-        <div style="text-align:center;">
-          <p id="click-multiplier" style="color:var(--cyan); margin-bottom:10px;">Multiplicador actual: +1 Gema por Clic</p>
-          <button id="upgrade-btn" class="btn btn-outline" onclick="buyUpgrade()" style="font-size:14px;">Adquirir Teclado Mecánico (Coste: 30 💎)</button>
-        </div>
-      </div>
-    </section>
+<section class="quick">
+  <div class="quick-grid">
+    <a class="quick-btn reveal" href="#juegos"><span class="ico">🎮</span><b>JUEGOS</b><small>Elige tu mundo</small></a>
+    <a class="quick-btn reveal" href="#codigos"><span class="ico">🎁</span><b>CÓDIGOS</b><small>Recompensas</small></a>
+    <a class="quick-btn reveal" href="#ranking"><span class="ico">🏆</span><b>RANKING</b><small>Los mejores</small></a>
+    <a class="quick-btn reveal" href="#comunidad"><span class="ico">💜</span><b>COMUNIDAD</b><small>Únete ya</small></a>
+  </div>
+</section>
 
-    <!-- 2. APARTADO: SUBIR STICKERS (MEMES VISUALES RECORTE TRANSPARENTE) -->
-    <section id="memes">
-      <div class="sec-head">
-        <h2>Álbum de Stickers de la Comunidad</h2>
+<section class="stats reveal">
+  <div class="stat"><strong>2+</strong><span>Mundos</span></div>
+  <div class="stat"><strong>24/7</strong><span>Diversión</span></div>
+  <div class="stat"><strong>∞</strong><span>Aventuras</span></div>
+</section>
+
+<section id="juegos">
+  <div class="head reveal">
+    <div class="eyebrow">// Selecciona tu mundo</div>
+    <h2 class="section-title">UNIVERSO GAMER</h2>
+    <p class="section-subtitle">Explora tus mundos favoritos</p>
+  </div>
+
+  <div class="cards">
+    <article class="card reveal">
+      <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=900&q=80" alt="Mando de videojuegos con luces de neón">
+      </div>
+      <div class="card-content">
+        <h3>ROBLOX</h3>
+        <p>Descubre experiencias, novedades, trucos y recompensas para disfrutar de Roblox.</p>
+        <a class="small-btn" href="https://www.roblox.com/" target="_blank" rel="noopener">ENTRAR ▸</a>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-img">
+        <span class="badge">Construye</span>
+        <img src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?w=900&q=80" alt="Juego de bloques en un móvil">
+      </div>
+      <div class="card-content">
+        <h3>MINECRAFT</h3>
+        <p>Construye mundos, descubre aventuras y aprende nuevos trucos para Minecraft.</p>
+        <a class="small-btn" href="https://www.minecraft.net/" target="_blank" rel="noopener">ENTRAR ▸</a>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-img">
+        <span class="badge">Noticias</span>
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900&q=80" alt="Sala recreativa con luces de neón">
+      </div>
+      <div class="card-content">
+        <h3>GAMING ZONE</h3>
+        <p>Noticias, videojuegos, curiosidades y contenido para los verdaderos gamers.</p>
+        <a class="small-btn" href="#comunidad">DESCUBRIR ▸</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="codigos">
+  <div class="head reveal">
+    <div class="eyebrow">// Loot desbloqueado</div>
+    <h2 class="section-title">CÓDIGOS Y RECOMPENSAS</h2>
+    <p class="section-subtitle">Consulta los códigos y comprueba si siguen activos.</p>
+  </div>
+
+  <div class="cards">
+    <article class="card reward reveal">
+      <div class="icon">🤖</div>
+      <div class="card-content">
+        <h3>Roblox Zone</h3>
+        <p>Visita la página oficial para encontrar promociones y recompensas disponibles.</p>
+        <a class="small-btn" href="https://www.roblox.com/promocodes" target="_blank" rel="noopener">VER PROMOCIONES ▸</a>
+      </div>
+    </article>
+
+    <article class="card reward reveal">
+      <div class="icon">⛏️</div>
+      <div class="card-content">
+        <h3>Minecraft Zone</h3>
+        <p>Descubre contenido, novedades y ofertas de Minecraft en su web oficial.</p>
+        <a class="small-btn" href="https://www.minecraft.net/" target="_blank" rel="noopener">VER NOVEDADES ▸</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="ranking">
+  <div class="head reveal">
+    <div class="eyebrow">// Salón de la fama</div>
+    <h2 class="section-title">RANKING GAMER</h2>
+    <p class="section-subtitle">Los protagonistas de nuestra comunidad</p>
+  </div>
+
+  <div class="ranking">
+    <div class="rank gold reveal">
+      <div class="pos">01</div>
+      <div class="info"><strong>🥇 Jugador del mes</strong><small>El más activo de la comunidad</small></div>
+      <span class="soon">Próximamente</span>
+    </div>
+    <div class="rank silver reveal">
+      <div class="pos">02</div>
+      <div class="info"><strong>🥈 Mejor constructor</strong><small>Las creaciones más épicas</small></div>
+      <span class="soon">Próximamente</span>
+    </div>
+    <div class="rank bronze reveal">
+      <div class="pos">03</div>
+      <div class="info"><strong>🥉 Mejor creador</strong><small>Contenido que nos encanta</small></div>
+      <span class="soon">Próximamente</span>
+    </div>
+  </div>
+</section>
+
+<section id="comunidad">
+  <div class="community reveal">
+    <div class="eyebrow">// Press start</div>
+    <h2>ÚNETE A MV GAMER 💜</h2>
+    <p>El universo gamer está creciendo. ¡Aquí comienza tu aventura!</p>
+    <a href="https://www.roblox.com/" target="_blank" rel="noopener" class="btn">EMPEZAR A JUGAR ▸</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo"><span class="logo-mark">🚀</span>MV <b>GAMER</b></a>
+  <p>© 2026 MV GAMER | Tu universo gamer 🎮</p>
+  <p style="margin-top:6px;">Creado para la comunidad gamer.</p>
+</footer>
+
+<!-- Botón volver arriba -->
+<button class="to-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+<!-- Barra de botones fija para móvil -->
+<div class="bottom-bar" role="navigation" aria-label="Accesos rápidos">
+  <a href="#juegos"><span>🎮</span>Juegos</a>
+  <a href="#codigos"><span>🎁</span>Códigos</a>
+  <a href="#ranking"><span>🏆</span>Ranking</a>
+  <a href="#comunidad"><span>💜</span>Únete</a>
+</div>
+
+<script>
+// Mostrar botón "volver arriba" y marcar la sección activa
+var toTop = document.querySelector('.to-top');
+var barLinks = document.querySelectorAll('.bottom-bar a');
+window.addEventListener('scroll', function(){
+  toTop.classList.toggle('show', window.scrollY > 500);
+  var current = '';
+  ['juegos','codigos','ranking','comunidad'].forEach(function(id){
+    var s = document.getElementById(id);
+    if (s && s.getBoundingClientRect().top < window.innerHeight * 0.5) current = id;
+  });
+  barLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+});
+
+// Cerrar el menú del móvil al pulsar un enlace
+document.querySelectorAll('.menu a').forEach(function(a){
+  a.addEventListener('click', function(){ document.querySelector('.menu').classList.remove('open'); });
+});
+
+// Animación al aparecer en pantalla
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+// Copiar códigos (por si añades códigos más adelante)
+function copiarCodigo(codigo) {
+  navigator.clipboard.writeText(codigo)
+    .then(function(){ alert("¡Código copiado!"); })
+    .catch(function(){ alert("No se pudo copiar el código."); });
+}
+</script>
+
+</body>
+</html>
