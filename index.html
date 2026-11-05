@@ -124,23 +124,7 @@ header{
 }
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* Accesos rápidos */
-.quick-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:12px;margin:40px 0;
-}
-.quick-card{
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:16px;text-align:center;transition:.25s;display:block;
-}
-.quick-card:hover{
-  border-color:var(--cyan);transform:translateY(-4px);
-  box-shadow:0 8px 24px rgba(34,230,255,.18);
-}
-.quick-card .icon{font-size:28px;margin-bottom:6px}
-.quick-card .label{font-family:"Orbitron",sans-serif;font-size:13px;font-weight:700}
-
-/* Secciones */
+/* Secciones y Maquetación */
 section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
 .sec-head{text-align:center;margin-bottom:36px}
 .sec-head h2{
@@ -148,113 +132,106 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
 }
 .sec-head p{color:var(--muted);font-size:17px}
 
-/* Coach Gamer IA */
-.ai-box{
-  background:linear-gradient(145deg,rgba(20,24,55,.9),rgba(11,13,32,.95));
-  border:2px solid var(--cyan);border-radius:16px;padding:28px;
-  box-shadow:0 0 40px rgba(34,230,255,.15);
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
-.ai-badge{
-  display:inline-flex;align-items:center;gap:6px;padding:4px 12px;
-  background:rgba(34,230,255,.15);border-radius:20px;color:var(--cyan);
-  font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:14px;
-}
-.ai-suggests{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-.ai-chip{
-  background:rgba(255,255,255,.06);border:1px solid var(--border);
-  padding:6px 14px;border-radius:20px;font-size:14px;font-weight:600;
-  transition:.2s;color:var(--muted);
-}
-.ai-chip:hover{border-color:var(--cyan);color:var(--text);background:rgba(34,230,255,.1)}
-.ai-input-wrap{display:flex;gap:10px;margin-top:14px}
-@media(max-width:600px){.ai-input-wrap{flex-direction:column}}
-.ai-input{
-  flex:1;background:rgba(6,7,19,.8);border:1px solid var(--border);
-  padding:14px 18px;border-radius:10px;color:var(--text);font-family:inherit;font-size:16px;
-}
-.ai-input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 15px rgba(34,230,255,.3)}
-.ai-response{
-  margin-top:20px;padding:20px;border-radius:12px;background:rgba(157,92,255,.12);
-  border-left:4px solid var(--cyan);display:none;animation:fadeIn .3s ease;
-}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* Guías */
-.games-filter{display:flex;gap:10px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
-.filter-btn{
-  padding:8px 18px;border-radius:20px;background:rgba(255,255,255,.05);
-  border:1px solid var(--border);font-weight:700;font-size:14px;transition:.2s;
-}
-.filter-btn.active,.filter-btn:hover{background:var(--violet);border-color:var(--violet);color:#fff}
-
-.guides-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 .guide-card{
   background:var(--card);border:1px solid var(--border);border-radius:14px;
   padding:22px;transition:.25s;display:flex;flex-direction:column;
 }
 .guide-card:hover{border-color:var(--pink);transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,62,200,.2)}
+
 .guide-tag{
   align-self:flex-start;font-size:12px;font-weight:700;padding:3px 10px;
   border-radius:6px;text-transform:uppercase;margin-bottom:12px;
 }
 .tag-roblox{background:rgba(255,65,84,.2);color:var(--red);border:1px solid var(--red)}
-.tag-minecraft{background:rgba(182,255,59,.2);color:var(--lime);border:1px solid var(--lime)}
 .tag-fortnite{background:rgba(34,230,255,.2);color:var(--cyan);border:1px solid var(--cyan)}
 .tag-futbol{background:rgba(255,209,59,.2);color:var(--gold);border:1px solid var(--gold)}
-.guide-card h3{font-family:"Orbitron",sans-serif;font-size:18px;margin-bottom:8px}
-.guide-card p{color:var(--muted);font-size:15px;flex:1;margin-bottom:14px}
 
-/* Alojamientos */
-.alojamientos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.alojamiento-card {
+/* Bloques interactivos */
+.interactive-container {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 24px;
-  text-align: center;
-  transition: .25s;
+  margin-bottom: 20px;
 }
-.alojamiento-card:hover {
-  border-color: var(--cyan);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(34,230,255,.2);
+.arcade-screen {
+  background: #020308;
+  border: 2px dashed var(--cyan);
+  border-radius: 12px;
+  height: 200px;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.alojamiento-card h3 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 19px;
-  margin-bottom: 10px;
+.forum-input {
+  width: 100%;
+  background: rgba(6,7,19,.8);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
   color: var(--text);
+  font-family: inherit;
+  margin-bottom: 10px;
 }
-.alojamiento-card p {
-  color: var(--muted);
-  font-size: 15px;
-  margin-bottom: 18px;
+.forum-input:focus {
+  outline: none;
+  border-color: var(--cyan);
 }
 
-/* Clases específicas para reacciones de memes usando tus variables */
-.meme-reactions {
+/* EFECTOS Y CONTENEDOR TIPO STICKER */
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+.sticker-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.25s;
 }
-.meme-react-btn {
-  background: rgba(255, 255, 255, 0.04);
+.sticker-card:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+.sticker-img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 8px var(--cyan)) drop-shadow(0 0 2px #fff);
+  background: transparent;
+  padding: 5px;
+}
+.reaction-btn-simple {
+  background: rgba(6,7,19,0.8);
   border: 1px solid var(--border);
-  padding: 8px 16px;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--text);
   transition: 0.2s;
+  color: var(--text);
 }
-.meme-react-btn:hover {
-  border-color: var(--cyan);
-  background: rgba(34, 230, 255, 0.1);
+.reaction-btn-simple:hover {
+  border-color: var(--pink);
+  background: rgba(255, 62, 200, 0.1);
 }
 </style>
 </head>
@@ -269,16 +246,51 @@ section{padding:50px 0;border-top:1px solid rgba(255,255,255,.05)}
       </div>
       <nav class="nav-links">
         <a href="#inicio">Inicio</a>
-        <a href="#coach">Coach IA</a>
         <a href="#minijuegos">Minijuegos</a>
-        <a href="#guias">Guías</a>
-        <a href="#memes">Memes</a>
-        <a href="#alojamientos">Alojamientos</a>
+        <a href="#memes">Stickers</a>
+        <a href="#chistes">Chistes</a>
+        <a href="#guias">Comunidad FAQ</a>
       </nav>
     </div>
   </header>
 
   <div class="container">
     
-    <!-- Hero Section -->
+    <!-- Hero Principal -->
     <section id="inicio" class="hero" style="border:none;">
+      <span class="hero-tag">Comunidad Interactiva</span>
+      <h1>Universo Gamer de <span>MV GAMER</span></h1>
+      <p>Explora juegos exclusivos, comparte stickers transparentes con votaciones abiertas y debate estrategias con la comunidad.</p>
+      <div class="hero-cta">
+        <a href="#minijuegos" class="btn btn-primary">Jugar Ahora</a>
+        <a href="#memes" class="btn btn-cyan">Zona Stickers</a>
+        <a href="#guias" class="btn btn-outline">Foro Consultas</a>
+      </div>
+    </section>
+
+    <!-- 1. APARTADO: MINIJUEGOS NATIVOS -->
+    <section id="minijuegos">
+      <div class="sec-head">
+        <h2>Minijuegos Exclusivos</h2>
+        <p>Títulos interactivos ligeros desarrollados en código nativo para la comunidad.</p>
+      </div>
+      
+      <div class="interactive-container" style="max-width: 600px; margin: 0 auto;">
+        <h3 style="font-family:'Orbitron'; text-align:center;">Gamer Clicker Quest</h3>
+        <p style="color:var(--muted); text-align:center; font-size:15px;">¡Haz clic para acumular gemas e incrementar tu poder informático!</p>
+        
+        <div class="arcade-screen">
+          <h1 id="click-counter" style="color:var(--gold); font-size:42px; font-family:'Orbitron'; margin-bottom:10px;">0 💎</h1>
+          <button class="btn btn-primary" onclick="clickGema()" style="border-radius:50%; width:80px; height:80px; font-size:28px; padding:0;">🎮</button>
+        </div>
+        <div style="text-align:center;">
+          <p id="click-multiplier" style="color:var(--cyan); margin-bottom:10px;">Multiplicador actual: +1 Gema por Clic</p>
+          <button id="upgrade-btn" class="btn btn-outline" onclick="buyUpgrade()" style="font-size:14px;">Adquirir Teclado Mecánico (Coste: 30 💎)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. APARTADO: SUBIR STICKERS (MEMES VISUALES RECORTE TRANSPARENTE) -->
+    <section id="memes">
+      <div class="sec-head">
+        <h2>Álbum de Stickers de la Comunidad</h2>
